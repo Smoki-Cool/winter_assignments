@@ -1,9 +1,9 @@
 '''
 Write a program to input the value of x and n and print the sum of the following series:
-$   1 + x + x² + x³ + x⁴ + .... + xⁿ
-$   1 - x + x² - x³ + x⁴ + .... xⁿ
+$   1 + x + x² + x³ + x⁴ + .... xⁿ
+$   1 - x + x² - x³ + x⁴ - .... xⁿ
 $   x - x²/2 + x³/3 - x⁴/4 + .... xⁿ/n
-$   x + x²/2! - x³/3! + x⁴/4! - x⁵/5! + .... + xⁿ/n!
+$   x + x²/2! - x³/3! + x⁴/4! - .... xⁿ/n!
 '''
 
 x = input("\nEnter value of 'x': ")
@@ -50,7 +50,18 @@ if x.replace('.', '').replace('-', '').replace('+', '').isnumeric():
                 else:
                     seq4 -= (x**i)/factorial
             
-            print(seq1, seq2, seq3, seq4)
+            
+            superscript = {'': '', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+                           '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'}
+            
+            n_conv = ''.join([superscript[x] for x in str(n).replace('', ' ').split(' ')])
+            
+            print(f'''
+1 + x + x² + x³ + x⁴ + .... x{n_conv}          = {seq1}
+1 - x + x² - x³ + x⁴ - .... x{n_conv}          = {seq2}
+x - x²/2 + x³/3 - x⁴/4 + .... x{n_conv}/{n}     = {seq3}
+x + x²/2! - x³/3! + x⁴/4! - .... x{n_conv}/{n}! = {seq4}
+''')
         
         else:
             print(f"\nERROR: 'n' must be greater than 0.\n")
