@@ -51,10 +51,10 @@ if x.replace('.', '').replace('-', '').replace('+', '').isnumeric():
                     seq4 -= (x**i)/factorial
             
             
-            superscript = {'': '', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+            superscript = {'0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
                            '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'}
             
-            n_conv = ''.join([superscript[x] for x in str(n).replace('', ' ').split(' ')])
+            n_conv = ''.join([superscript[i] for i in str(n)])
             
             print(f'''
 1 + x + x² + x³ + x⁴ + .... x{n_conv}          = {seq1}
