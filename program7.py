@@ -19,7 +19,7 @@ if n.isnumeric():
     
     print('')
     print(f'Fabonacci series:', ', '.join(terms))
-    print(f'Sum of the series = {sum}\n')
+    print(f'Sum of the series: {sum}\n')
     
 else:
     print(f"\nERROR: '{n}' is not a valid Number.\n")

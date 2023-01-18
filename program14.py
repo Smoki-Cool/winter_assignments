@@ -10,7 +10,7 @@ if type(inp) == list:
         if type(i) == int or type(i) == float:
             pass
         else:
-            print("\nERROR: All elements of the list must be a number.\n")
+            print(f'\nERROR: All elements of the list must be a number, index {inp.index(i)}, "{i}"\n')
             cond = False
             break
     

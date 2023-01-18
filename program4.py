@@ -19,7 +19,7 @@ if x.replace('.', '').replace('-', '').replace('+', '').isnumeric():
             
             seq1 = 0
             seq2 = 0
-            seq3 = 0
+            seq3 = x
             seq4 = x
             
             
@@ -32,7 +32,7 @@ if x.replace('.', '').replace('-', '').replace('+', '').isnumeric():
                     seq2 -= x**i
             
             
-            for i in range(1, n+1):
+            for i in range(2, n+1):
                 if i%2 == 0:
                     seq3 -= (x**i)/i
                 else:
@@ -51,16 +51,11 @@ if x.replace('.', '').replace('-', '').replace('+', '').isnumeric():
                     seq4 -= (x**i)/factorial
             
             
-            superscript = {'0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
-                           '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'}
-            
-            n_conv = ''.join([superscript[i] for i in str(n)])
-            
             print(f'''
-1 + x + x² + x³ + x⁴ + .... x{n_conv}          = {seq1}
-1 - x + x² - x³ + x⁴ - .... x{n_conv}          = {seq2}
-x - x²/2 + x³/3 - x⁴/4 + .... x{n_conv}/{n}     = {seq3}
-x + x²/2! - x³/3! + x⁴/4! - .... x{n_conv}/{n}! = {seq4}
+1 + x + x² + x³ + x⁴ + .... xⁿ          = {seq1}
+1 - x + x² - x³ + x⁴ - .... xⁿ          = {seq2}
+x - x²/2 + x³/3 - x⁴/4 + .... xⁿ/ⁿ     = {seq3}
+x + x²/2! - x³/3! + x⁴/4! - .... xⁿ/ⁿ! = {seq4}
 ''')
         
         else:
