@@ -2,6 +2,9 @@
 Count and display the number of vowels, consonants, uppercase, lowercase characters in string.
 '''
 
+def insert(var: int): return str(var) + ' ' * (7 - len(str(var)))
+
+
 inp = (input('\nEnter your string: '))
 
 _vowels = ['a', 'e', 'i', 'o', 'u']
@@ -22,27 +25,14 @@ for i in inp:
     elif i.islower():
         lowercase += 1
 
-
-print('┌─────────────────────┬─────────┐')
-
-insert_ = ' ' * (7 - len(str(vowels)))
-print(f'│ Vowels              │  {vowels}{insert_}│')
-
-print('├─────────────────────┼─────────┤')
-
-insert_ = ' ' * (7 - len(str(consonants)))
-print(f'│ Consonants          │  {consonants}{insert_}│')
-
-print('├─────────────────────┼─────────┤')
-
-insert_ = ' ' * (7 - len(str(uppercase)))
-print(f'│ Uppercase           │  {uppercase}{insert_}│')
-
-print('├─────────────────────┼─────────┤')
-
-insert_ = ' ' * (7 - len(str(lowercase)))
-print(f'│ Lowercase           │  {lowercase}{insert_}│')
-
-print('└─────────────────────┴─────────┘')
-
+# insert() function is used for even number of spacing in the table
+print( '┌─────────────────────┬─────────┐')
+print(f'│ Vowels              │  {insert(vowels)}│')
+print( '├─────────────────────┼─────────┤')
+print(f'│ Consonants          │  {insert(consonants)}│')
+print( '├─────────────────────┼─────────┤')
+print(f'│ Uppercase           │  {insert(uppercase)}│')
+print( '├─────────────────────┼─────────┤')
+print(f'│ Lowercase           │  {insert(lowercase)}│')
+print( '└─────────────────────┴─────────┘')
 print('')
